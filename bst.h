@@ -8,8 +8,8 @@ typedef struct TreeNode {
 
     int value; 
 
-    (struct TreeNode)* leftChild;
-    (struct TreeNode)* rightChild;
+    struct TreeNode* leftChild;
+    struct TreeNode* rightChild;
 
 
 
@@ -32,8 +32,6 @@ int isBSTEmpty(BST* bst);
 void insertInBST(BST* bst, TreeNode* node);
 
 TreeNode* searchInBST(BST* bst, int value);
-
-TreeNode* deleteFromBST(BST* bst, int value);
 
 void freeBST(BST* bst);
 

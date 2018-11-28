@@ -12,3 +12,6 @@
 * poll:O(1)
 * print: O(n)
 
+### BST (Binary Search Tree)
+* insert:O(log2 n)
+* search: O(log2 n)

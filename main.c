@@ -4,6 +4,7 @@
 #include "node.h"
 #include "stack.h"
 #include "queue.h"
+#include "bst.h"
 
 
 int main(int argc, char** argv){
@@ -48,6 +49,34 @@ int main(int argc, char** argv){
     freeNode(node6);
 
 
+    TreeNode* tnode1 = newTreeNode(1);
+    TreeNode* tnode2 = newTreeNode(2);
+    TreeNode* tnode3 = newTreeNode(3);
+    TreeNode* tnode4 = newTreeNode(4);
+    TreeNode* tnode5 = newTreeNode(5);
+    TreeNode* tnode6 = newTreeNode(6);
+    TreeNode* tnode7 = newTreeNode(7);
+
+    BST* bst = newBST();
+
+    insertInBST(bst,tnode1);
+    insertInBST(bst,tnode2);
+    insertInBST(bst,tnode3);
+    insertInBST(bst,tnode4);
+    insertInBST(bst,tnode5);
+    insertInBST(bst,tnode6);
+    insertInBST(bst,tnode7);
+
+    freeBST(bst);
+
+    freeTreeNode(tnode1);
+    freeTreeNode(tnode2);
+    freeTreeNode(tnode3);
+    freeTreeNode(tnode4);
+    freeTreeNode(tnode5);
+    freeTreeNode(tnode6);
+    freeTreeNode(tnode7);
+    
 
     return EXIT_SUCCESS;
 }
