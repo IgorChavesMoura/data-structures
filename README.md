@@ -3,12 +3,12 @@
 ## Algorithms Complexity
 
 ### Stack
-push: O(1)
-pop:O(1)
-print: O(n)
+1.push: O(1)
+2.pop:O(1)
+3.print: O(n)
 
 ### Queue
-queue:O(1) -> Using 1 extra pointer
-poll:O(1)
-print: O(n)
+1.queue:O(1) -> Using 1 extra pointer
+2.poll:O(1)
+3.print: O(n)
 
