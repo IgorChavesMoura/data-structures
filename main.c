@@ -1,144 +1,52 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct Node {
-
-    int value;
-
-    struct Node* next;
-
-} Node;
+#include "node.h"
+#include "stack.h"
+#include "queue.h"
 
 
-typedef struct Stack {
-
-    Node* top;
-
-} Stack;
-
-typedef struct Queue {
-
-    Node* first;
-
-} Queue;
-
-
-
-
-Stack* newStack();
-
-int isStackEmpty(Stack* stack); 
-
-void push(Stack* stack, Node* node);
-
-Node* pop(Stack* stack);
-
-void freeStack(Stack* stack);
-
-
-Queue* newQueue();
-
-int isQueueEmpty(Queue* queue);
-
-void queue(Queue* queue, Node* node);
-
-Node* poll(Queue* queue);
-
-void freeQueue(Queue* queue);
-
-
-
-
-
-Stack* newStack(){
-
-    Stack* stack = (Stack*)malloc(sizeof(Stack));
-
-    return stack;
-
-}
-
-int isStackEmpty(Stack* stack){
-
-    if(stack->top == NULL){
-
-        return 1;
-
-    }
-
-    return 0;
-}
-
-void push(Stack* stack, Node* node){
-
-    if(isStackEmpty(stack)){
-
-        stack->top = node;
-        return;
+int main(int argc, char** argv){
     
-    }
 
-    Node* curr = stack->top;
+    Node* node1 = newNode(1);
+    Node* node2 = newNode(2);
+    Node* node3 = newNode(3);
 
-    stack->top = node;
-    
-    node->next = curr;
+    Node* node4 = newNode(4);
+    Node* node5 = newNode(5);
+    Node* node6 = newNode(6);
 
-    
-}
-
-Node* pop(Stack* stack){
-
-    if(isStackEmpty(stack)){
-
-        return NULL;
-
-    }
-
-    Node* curr = stack->top;
-
-    stack->top = curr->next;
-
-    return NULL; 
-
-}
-
-void freeStack(Stack* stack){
-
-    free(stack);
-
-}
+    Queue* queue = newQueue();
+    Stack* stack = newStack();
 
 
-Queue* newQueue(){
 
-    Queue* queue = (Queue*)malloc(sizeof(Queue));
+    push_back(queue,node1);
+    push_back(queue,node2);
+    push_back(queue,node3);
 
-    return queue;
-
-}
-
-int isQueueEmpty(Queue* queue){
-
-    if(queue->first == NULL){
-
-        return 1;
-
-    }
-
-    return 0;
-
-}
-
-void queue(Queue* queue, Node* node);
-
-Node* poll(Queue* queue);
-
-void freeQueue(Queue* queue);
+    push(stack,node4);
+    push(stack,node5);
+    push(stack,node6);
 
 
-int main(int argc, char const *argv[]){
-    
+
+    printStack(stack);
+
+    printQueue(queue);
+
+    freeStack(stack);
+
+    freeQueue(queue);
+
+    freeNode(node1);
+    freeNode(node2);
+    freeNode(node3);
+    freeNode(node4);
+    freeNode(node5);
+    freeNode(node6);
+
 
 
     return EXIT_SUCCESS;
