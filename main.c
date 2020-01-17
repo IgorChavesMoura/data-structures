@@ -59,13 +59,15 @@ int main(int argc, char** argv){
 
     BST* bst = newBST();
 
-    insertInBST(bst,tnode1);
     insertInBST(bst,tnode2);
+    insertInBST(bst,tnode1);
     insertInBST(bst,tnode3);
     insertInBST(bst,tnode4);
-    insertInBST(bst,tnode5);
     insertInBST(bst,tnode6);
+    insertInBST(bst,tnode5);
     insertInBST(bst,tnode7);
+
+    printBST(bst);
 
     freeBST(bst);
 

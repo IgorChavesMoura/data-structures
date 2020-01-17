@@ -1,5 +1,6 @@
 #include "bst.h"
 
+
 TreeNode* newTreeNode(int value){
 
     TreeNode* node = (TreeNode*)malloc(sizeof(TreeNode));
@@ -133,7 +134,7 @@ TreeNode* searchInBST(BST* bst, int value){
 
         if(node == NULL){
 
-            found = 1; //Node doesn't exists in the bst
+            found = 0; //Node doesn't exists in the bst
         }
 
         if(node->value == value){
@@ -156,6 +157,36 @@ TreeNode* searchInBST(BST* bst, int value){
     return node;
 
 }
+
+// Function to print binary tree in 2D 
+// It does reverse inorder traversal 
+void print2DUtil(TreeNode* root, int space) { 
+    // Base case 
+    if (root == NULL) 
+        return; 
+  
+    // Increase distance between levels 
+    space += COUNT; 
+  
+    // Process right child first 
+    print2DUtil(root->rightChild, space); 
+  
+    // Print current node after space 
+    // count 
+    printf("\n"); 
+    for (int i = COUNT; i < space; i++) 
+        printf(" "); 
+    printf("%d\n", root->value); 
+  
+    // Process left child 
+    print2DUtil(root->leftChild, space); 
+} 
+  
+// Wrapper over print2DUtil() 
+void printBST(BST* bst) { 
+   // Pass initial space count as 0 
+   print2DUtil(bst->root, 0); 
+} 
 
 void freeBST(BST* bst){
 
