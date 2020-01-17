@@ -1,4 +1,4 @@
-# Data Structures simple implementation in C
+#Basic Data Structures simple implementation in C
 
 ## Algorithms Complexity
 
